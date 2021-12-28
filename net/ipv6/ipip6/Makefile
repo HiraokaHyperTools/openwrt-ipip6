@@ -9,7 +9,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ipip6
-PKG_RELEASE:=0.2
+PKG_RELEASE:=0.3
 PKG_RELEASE:=1
 PKG_LICENSE:=GPL-2.0
 
@@ -40,6 +40,7 @@ endef
 define Package/ipip6/install
 	$(INSTALL_DIR) $(1)/lib/netifd/proto
 	$(INSTALL_BIN) ./files/ipip6.sh $(1)/lib/netifd/proto/ipip6.sh
+	$(INSTALL_DIR) $(1)/www/luci-static/resources/protocol/
 	$(INSTALL_BIN) ./files/ipip6.js $(1)/www/luci-static/resources/protocol/ipip6.js
 endef
 
