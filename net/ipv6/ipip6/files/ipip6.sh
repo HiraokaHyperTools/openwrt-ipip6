@@ -98,9 +98,9 @@ proto_ipip6_init_config() {
 	proto_config_add_string "encaplimit"
 	proto_config_add_string "zone"
 	proto_config_add_string "weakif"
-    proto_config_add_string "ip4ifaddr"
+	proto_config_add_string "ip4ifaddr"
 }
 
 [ -n "$INCLUDE_ONLY" ] || {
-        add_protocol ipip6
+	add_protocol ipip6
 }
