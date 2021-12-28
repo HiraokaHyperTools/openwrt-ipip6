@@ -16,7 +16,7 @@ return network.registerProtocol('ipip6', {
 	},
 
 	getOpkgPackage: function() {
-		return 'ds-lite';
+		return 'ipip6';
 	},
 
 	isFloating: function() {
