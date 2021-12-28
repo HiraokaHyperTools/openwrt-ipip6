@@ -9,8 +9,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ipip6
+PKG_RELEASE:=0.2
 PKG_RELEASE:=1
 PKG_LICENSE:=GPL-2.0
+
+PKG_MAINTAINER:=kenjiuno
+PKG_LICENSE:=LGPL-2.0-or-later
 
 include $(INCLUDE_DIR)/package.mk
 

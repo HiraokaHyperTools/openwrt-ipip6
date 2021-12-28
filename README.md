@@ -17,7 +17,7 @@ This feed should be included and enabled by default in the OpenWrt buildroot. To
 
 ```
 ./scripts/feeds update ipip6
-./scripts/feeds install -a -p ipip6
+./scripts/feeds install ipip6
 ```
 
 The ipip6 package should now appear in menuconfig.
