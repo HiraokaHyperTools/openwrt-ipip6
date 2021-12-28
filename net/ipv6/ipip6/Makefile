@@ -12,9 +12,7 @@ PKG_NAME:=ipip6
 PKG_VERSION:=0.1
 PKG_RELEASE:=4
 PKG_LICENSE:=GPL-2.0
-
 PKG_MAINTAINER:=kenjiuno
-PKG_LICENSE:=LGPL-2.0-or-later
 
 include $(INCLUDE_DIR)/package.mk
 
