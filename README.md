@@ -21,3 +21,9 @@ This feed should be included and enabled by default in the OpenWrt buildroot. To
 ```
 
 The ipip6 package should now appear in menuconfig.
+
+This will make package
+
+```
+make package/ipip6/compile
+```
