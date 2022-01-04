@@ -4,52 +4,51 @@
 'require tools.widgets as widgets';
 
 network.registerPatternVirtual(/^ipip6-.+$/);
-network.registerErrorCode('AFTR_DNS_FAIL', _('Unable to resolve AFTR host name'));
 
 return network.registerProtocol('ipip6', {
-	getI18n: function() {
-		return _('ipip6 (RFC2473)');
+	getI18n: function () {
+		return _('IPv4 over IPv6 (ipip6)');
 	},
 
-	getIfname: function() {
+	getIfname: function () {
 		return this._ubus('l3_device') || 'ipip6-%s'.format(this.sid);
 	},
 
-	getOpkgPackage: function() {
+	getOpkgPackage: function () {
 		return 'ipip6';
 	},
 
-	isFloating: function() {
+	isFloating: function () {
 		return true;
 	},
 
-	isVirtual: function() {
+	isVirtual: function () {
 		return true;
 	},
 
-	getDevices: function() {
+	getDevices: function () {
 		return null;
 	},
 
-	containsDevice: function(ifname) {
+	containsDevice: function (ifname) {
 		return (network.getIfnameOf(ifname) == this.getIfname());
 	},
 
-	renderFormOptions: function(s) {
+	renderFormOptions: function (s) {
 		var o;
 
 		o = s.taboption('general', form.Value, 'peeraddr', _('Tunnel remote IPv6 address'));
-		o.rmempty  = false;
+		o.rmempty = false;
 		o.datatype = 'or(hostname,ip6addr("nomask"))';
 
 		o = s.taboption('general', form.Value, 'ip4ifaddr', _('Your global IPv4 address'));
-		o.rmempty  = false;
+		o.rmempty = false;
 		o.datatype = 'ip4addr("nomask")';
 
 		o = s.taboption('general', form.Value, 'ip6addr', _('Local IPv6 address'), _('Leave empty to use the current WAN address'));
 		o.datatype = 'ip6addr("nomask")';
-		o.load = function(section_id) {
-			return network.getWAN6Networks().then(L.bind(function(nets) {
+		o.load = function (section_id) {
+			return network.getWAN6Networks().then(L.bind(function (nets) {
 				if (Array.isArray(nets) && nets.length)
 					this.placeholder = nets[0].getIP6Addr();
 				return form.Value.prototype.load.apply(this, [section_id]);
@@ -58,11 +57,11 @@ return network.registerProtocol('ipip6', {
 
 		o = s.taboption('advanced', widgets.NetworkSelect, 'tunlink', _('Tunnel Link'));
 		o.nocreate = true;
-		o.exclude  = s.section;
+		o.exclude = s.section;
 
 		o = s.taboption('advanced', form.ListValue, 'encaplimit', _('Encapsulation limit'));
-		o.rmempty  = false;
-		o.default  = 'ignore';
+		o.rmempty = false;
+		o.default = 'ignore';
 		o.datatype = 'or("ignore",range(0,255))';
 		o.value('ignore', _('ignore'));
 		for (var i = 0; i < 256; i++)
@@ -73,11 +72,11 @@ return network.registerProtocol('ipip6', {
 
 		o = s.taboption('advanced', form.Value, 'metric', _('Use gateway metric'));
 		o.placeholder = '0';
-		o.datatype    = 'uinteger';
+		o.datatype = 'uinteger';
 		o.depends('defaultroute', '1');
 
 		o = s.taboption('advanced', form.Value, 'mtu', _('Use MTU on tunnel interface'));
 		o.placeholder = '1280';
-		o.datatype    = 'max(9200)';
+		o.datatype = 'max(9200)';
 	}
 });
