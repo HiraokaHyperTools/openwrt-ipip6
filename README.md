@@ -6,6 +6,8 @@ This is an ipip6 package feed containing community maintained package.
 
 ## Usage
 
+Check [[OpenWrt Wiki] Build system usage](https://openwrt.org/docs/guide-developer/toolchain/use-buildsystem) about how to build.
+
 To use these packages, add the following line to the feeds.conf
 in the OpenWrt buildroot:
 
