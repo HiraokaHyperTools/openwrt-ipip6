@@ -3,7 +3,7 @@ local interface = luci.model.network.interface
 local proto = netmod:register_protocol("ipip6")
 
 function proto.get_i18n(self)
-	return luci.i18n.translate("IPv4 over IPv6 (RFC2473)")
+	return luci.i18n.translate("IPv4 over IPv6 (ipip6)")
 end
 
 function proto.ifname(self)
