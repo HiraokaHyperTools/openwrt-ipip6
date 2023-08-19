@@ -40,10 +40,11 @@ define Package/ipip6/install
 	$(INSTALL_BIN) ./files/ipip6.sh $(1)/lib/netifd/proto/ipip6.sh
 	$(INSTALL_DIR) $(1)/www/luci-static/resources/protocol/
 	$(INSTALL_BIN) ./files/ipip6.js $(1)/www/luci-static/resources/protocol/ipip6.js
-  $(INSTALL_DIR) $(1)/usr/lib/lua/luci/model/network
-	$(INSTALL_BIN) ./files/lede/ipip6_reg.lua $(1)/usr/lib/lua/luci/model/network/proto_ipip6.lua
-  $(INSTALL_DIR) $(1)/usr/lib/lua/luci/model/cbi/admin_network
-	$(INSTALL_BIN) ./files/lede/ipip6.lua $(1)/usr/lib/lua/luci/model/cbi/admin_network/proto_ipip6.lua
+	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/model/network
+	$(INSTALL_BIN) ./files/ipip6_reg.lua $(1)/usr/lib/lua/luci/model/network/proto_ipip6.lua
+	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/model/cbi/admin_network
+	$(INSTALL_BIN) ./files/ipip6.lua $(1)/usr/lib/lua/luci/model/cbi/admin_network/proto_ipip6.lua
+
 endef
 
 $(eval $(call BuildPackage,ipip6))
