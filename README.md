@@ -48,4 +48,4 @@ make package/ipip6/compile
 
 ## Download
 
-- [ipip6_0.1-5_all.ipk](https://github.com/HiraokaHyperTools/openwrt-ipip6/releases/download/v0.1-5/ipip6_0.1-5_all.ipk)
+- [ipip6_0.1-6](https://github.com/HiraokaHyperTools/openwrt-ipip6/releases/download/v0.1-6/ipip6_0.1-6_all.ipk)
