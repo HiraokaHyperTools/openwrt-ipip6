@@ -24,7 +24,23 @@ This feed should be included and enabled by default in the OpenWrt buildroot. To
 
 The ipip6 package should now appear in menuconfig.
 
-This will make package `bin/packages/mipsel_24kc/ipip6/ipip6_0.1-4_all.ipk` or such.
+```
+make menuconfig
+```
+
+Enter `Network`:
+
+![2023-08-21_11h10_58](https://github.com/HiraokaHyperTools/openwrt-ipip6/assets/5955540/a4c9d73b-47aa-4188-a682-e6971d76c81a)
+
+Check `ipip6` with `M`:
+
+![2023-08-21_11h11_07](https://github.com/HiraokaHyperTools/openwrt-ipip6/assets/5955540/c79493c3-6730-4ce7-9c24-6969cc6ef7be)
+
+Save to `.config`.
+
+And then `Exit`.
+
+The following command will make package `bin/packages/mipsel_24kc/ipip6/ipip6_0.1-4_all.ipk` or such.
 
 ```
 make package/ipip6/compile
