@@ -1,5 +1,14 @@
 # ipip6 package feed
 
+## ⚠ Officially available since: OpenWrt 23.05.3
+
+ipip6 seems to be merged into official OpenWrt 23.05.3 (Released: Fri, 22 Mar 2024)
+
+- [ds-lite: Add support for IPIP6(RFC2473) tunnel · openwrt/openwrt@21eeb45](https://github.com/openwrt/openwrt/commit/21eeb45420cf12c6df9b39b619f6579b3ec32bb4)
+- [luci-proto-ipv6: Add support for IPIP6(RFC2473) tunnel by missing233 · Pull Request #6875 · openwrt/luci](https://github.com/openwrt/luci/pull/6875)
+
+So, it reports conflicts if you are trying to install this `ipip6` package into `OpenWrt 23.05.3`.
+
 ## Description
 
 This is an ipip6 package feed containing community maintained package.
